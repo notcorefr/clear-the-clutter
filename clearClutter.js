@@ -1,8 +1,9 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const config= require('./config.json');
+const prompt = require('prompt-sync')();
 
-const folder = config.folderName;
+const folder = prompt('Enter the Folder name: ');
 console.log(folder)
 const folderPath = path.join(__dirname, folder);
 try{
