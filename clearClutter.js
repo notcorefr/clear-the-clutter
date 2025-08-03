@@ -1,17 +1,17 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const config= require('./config.json');
 const prompt = require('prompt-sync')();
 
-const folder = prompt('Enter the Folder name: ');
-console.log(folder)
-const folderPath = path.join(__dirname, folder);
-try{
-var folderFiles = fs.readdirSync(folder);
-}catch(err){
-console.error(`There was an Error While Moving Files or There are no such files to move.`);
-process.exit();
+const folderPath = prompt('Enter the Absolute Path of the Folder: ');
+
+
+try {
+    var folderFiles = fs.readdirSync(folder);
+} catch (err) {
+    console.error(`There was an Error While Moving Files or There are no such files to move.`);
+    process.exit();
 }
+
 let movedFiles = 0;
 let createdFolders = 0;
 
